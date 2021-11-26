@@ -25,9 +25,9 @@ static int size = 10;
 	}
 	
 	static void mergeSort(int[] inArr) {
-		
 		int l = inArr.length;
-		if (l < 2) {
+		
+		if(l <= 2) {
 			return;
 		}
 		
@@ -41,7 +41,7 @@ static int size = 10;
 		}
 		
 		for(int i = 0; i < l - m; i++) {
-			rArr[i] = inArr[m + i]; 
+			rArr[i] = inArr[m + i];
 		}
 		
 		mergeSort(lArr);
@@ -51,11 +51,10 @@ static int size = 10;
 	}
 	
 	static void merge(int[] inArr, int[] lArr, int[] rArr) {
-		
 		int i = 0, j = 0, k = 0;
 		
 		while(i < lArr.length && j < rArr.length) {
-			if(lArr[i] <= rArr[j]) {
+			if(lArr[i] < rArr[j]) {
 				inArr[k++] = lArr[i++];
 			}
 			else {
@@ -64,12 +63,11 @@ static int size = 10;
 		}
 		
 		while(i < lArr.length) {
-			inArr[k++] = lArr[i++];			
+			inArr[k++] = lArr[i++];
 		}
-			
+		
 		while(j < rArr.length) {
 			inArr[k++] = rArr[j++];
 		}
 	}
-
 }
