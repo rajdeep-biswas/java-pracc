@@ -49,7 +49,7 @@ public class MergeSortOne {
 		
 		int i = 0, j = 0, k = 0;
 		
-		while(i < leftArray.length && j < leftArray.length) {
+		while(i < leftArray.length && j < rightArray.length) {
 			if(leftArray[i] <= rightArray[j]) {
 				array[k] = leftArray[i];
 				i++;
